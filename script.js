@@ -3,6 +3,8 @@ console.log("Script JS works properly!");
 document.body.style.display = "flex";
 document.body.style.justifyContent = "center";
 
+const eraserCheckbox = document.querySelector("#eraser-checkbox")
+
 
 const main = document.querySelector("main");
 main.style.display = "flex";
@@ -53,7 +55,15 @@ function generateGrid(size)
 	{
 		const square = document.createElement('div');
 		square.addEventListener("mouseover", (event)=>{
-					event.target.style.backgroundColor = "purple";
+		if(eraserCheckbox.checked == true)
+		{
+			event.target.style.backgroundColor = "transparent";
+
+		}else
+		{
+			event.target.style.backgroundColor = "purple";
+		}
+					//event.target.style.backgroundColor = "purple";
 					console.log("Event fired!");
 					//square.style.color = 	
 					});
@@ -70,12 +80,3 @@ function generateGrid(size)
 }
 
 generateGrid(16);
-
-
-
-
-
-
-
-
-
